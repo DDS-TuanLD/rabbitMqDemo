@@ -2,6 +2,8 @@ import amqp from "amqplib";
 import "dotenv/config";
 // create a connection to rabbitMQ server
 const connection = await amqp.connect(process.env.RABBIT_SERVER_URL, {
+  username: "test",
+  password: "test",
   frameMax: 0,
   heartbeat: 0,
 });
@@ -19,5 +21,3 @@ await channel.assertQueue(queue, {
 });
 
 export default channel;
-
-
