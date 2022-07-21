@@ -1,4 +1,4 @@
-import channel from "./rabbitQueue.mjs";
+import { channel, connection } from "./rabbitQueue.mjs";
 import "dotenv/config";
 
 const sendMessage = async () => {
@@ -7,3 +7,7 @@ const sendMessage = async () => {
 };
 
 await sendMessage();
+setTimeout(function () {
+  connection.close();
+  process.exit(0);
+}, 500);

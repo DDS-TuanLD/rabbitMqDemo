@@ -1,4 +1,4 @@
-import channel from "./rabbitQueue.mjs";
+import { channel } from "./rabbitQueue.mjs";
 import "dotenv/config";
 
 let i = 1;
